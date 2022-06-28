@@ -14,6 +14,7 @@ abstract class User extends Equatable {
   /// Creates a user.
   const User._({
     this.createdAt,
+    this.fullName,
     this.firstName,
     required this.id,
     this.imageUrl,
@@ -26,6 +27,7 @@ abstract class User extends Equatable {
 
   const factory User({
     int? createdAt,
+    String? fullName,
     String? firstName,
     required String id,
     String? imageUrl,
@@ -41,6 +43,9 @@ abstract class User extends Equatable {
 
   /// Created user timestamp, in ms.
   final int? createdAt;
+
+  /// Full name of the user.
+  final String? fullName;
 
   /// First name of the user.
   final String? firstName;
@@ -70,6 +75,7 @@ abstract class User extends Equatable {
   @override
   List<Object?> get props => [
         createdAt,
+        fullName,
         firstName,
         id,
         imageUrl,
@@ -82,6 +88,7 @@ abstract class User extends Equatable {
 
   User copyWith({
     int? createdAt,
+    String? fullName,
     String? firstName,
     String? id,
     String? imageUrl,
@@ -100,6 +107,7 @@ abstract class User extends Equatable {
 class _User extends User {
   const _User({
     super.createdAt,
+    super.fullName,
     super.firstName,
     required super.id,
     super.imageUrl,
@@ -113,6 +121,7 @@ class _User extends User {
   @override
   User copyWith({
     dynamic createdAt = _Unset,
+    dynamic fullName = _Unset,
     dynamic firstName = _Unset,
     String? id,
     dynamic imageUrl = _Unset,
@@ -124,6 +133,7 @@ class _User extends User {
   }) =>
       _User(
         createdAt: createdAt == _Unset ? this.createdAt : createdAt as int?,
+        fullName: fullName == _Unset ? this.fullName : fullName as String?,
         firstName: firstName == _Unset ? this.firstName : firstName as String?,
         id: id ?? this.id,
         imageUrl: imageUrl == _Unset ? this.imageUrl : imageUrl as String?,
