@@ -19,6 +19,8 @@ abstract class User extends Equatable {
     required this.id,
     this.imageUrl,
     this.lastName,
+    this.isAnonymous,
+    this.isVerified,
     this.lastSeen,
     this.metadata,
     this.role,
@@ -32,6 +34,8 @@ abstract class User extends Equatable {
     required String id,
     String? imageUrl,
     String? lastName,
+    bool? isAnonymous,
+    bool? isVerified,
     int? lastSeen,
     Map<String, dynamic>? metadata,
     Role? role,
@@ -59,6 +63,12 @@ abstract class User extends Equatable {
   /// Last name of the user.
   final String? lastName;
 
+  /// Is user anonymous or not.
+  final bool? isAnonymous;
+
+  /// Is user verified or not.
+  final bool? isVerified;
+
   /// Timestamp when user was last visible, in ms.
   final int? lastSeen;
 
@@ -80,6 +90,8 @@ abstract class User extends Equatable {
         id,
         imageUrl,
         lastName,
+        isAnonymous,
+        isVerified,
         lastSeen,
         metadata,
         role,
@@ -92,6 +104,8 @@ abstract class User extends Equatable {
     String? firstName,
     String? id,
     String? imageUrl,
+    bool? isAnonymous,
+    bool? isVerified,
     String? lastName,
     int? lastSeen,
     Map<String, dynamic>? metadata,
@@ -112,6 +126,8 @@ class _User extends User {
     required super.id,
     super.imageUrl,
     super.lastName,
+    super.isAnonymous,
+    super.isVerified,
     super.lastSeen,
     super.metadata,
     super.role,
@@ -126,6 +142,8 @@ class _User extends User {
     String? id,
     dynamic imageUrl = _Unset,
     dynamic lastName = _Unset,
+    dynamic isAnonymous = _Unset,
+    dynamic isVerified = _Unset,
     dynamic lastSeen = _Unset,
     dynamic metadata = _Unset,
     dynamic role = _Unset,
@@ -137,6 +155,10 @@ class _User extends User {
         firstName: firstName == _Unset ? this.firstName : firstName as String?,
         id: id ?? this.id,
         imageUrl: imageUrl == _Unset ? this.imageUrl : imageUrl as String?,
+        isAnonymous:
+            isAnonymous == _Unset ? this.isAnonymous : isAnonymous as bool?,
+        isVerified:
+            isVerified == _Unset ? this.isVerified : isVerified as bool?,
         lastName: lastName == _Unset ? this.lastName : lastName as String?,
         lastSeen: lastSeen == _Unset ? this.lastSeen : lastSeen as int?,
         metadata: metadata == _Unset
