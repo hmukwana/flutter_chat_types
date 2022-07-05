@@ -13,7 +13,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       id: json['id'] as String,
       imageUrl: json['imageUrl'] as String?,
       lastName: json['lastName'] as String?,
-      isAnonymous: json['isAnonymous'] as bool?,
+      isHidden: json['isHidden'] as bool?,
       isVerified: json['isVerified'] as bool?,
       lastSeen: json['lastSeen'] as int?,
       metadata: json['metadata'] as Map<String, dynamic>?,
@@ -36,7 +36,7 @@ Map<String, dynamic> _$UserToJson(User instance) {
   val['id'] = instance.id;
   writeNotNull('imageUrl', instance.imageUrl);
   writeNotNull('lastName', instance.lastName);
-  writeNotNull('isAnonymous', instance.isAnonymous);
+  writeNotNull('isHidden', instance.isHidden);
   writeNotNull('isVerified', instance.isVerified);
   writeNotNull('lastSeen', instance.lastSeen);
   writeNotNull('metadata', instance.metadata);
